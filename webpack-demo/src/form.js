@@ -1,5 +1,3 @@
-import { compareAsc, format } from 'date-fns'
-
 //To do constructor
 function render(){
 
@@ -13,8 +11,25 @@ function render(){
         }
     
     //ToDo storer
-    let myStorer = [];
-    
+    let myStorer = [{
+    Title: "Push-Up",
+    Description: "100 times nonstop",
+    DueDate: "2222-12-12",
+    },
+    {
+    Title: "Pull-Up",
+    Description: "10 times no break",
+    DueDate: "2222-10-22",
+    },
+    {
+    Title: "Wake-up early",
+    Description: "at 08:00",
+    DueDate: "2222-09-03",
+    },
+];
+
+addToDoToStorer();
+
     //ToDo pusher
     function addToDoToStorer(Title, Description, DueDate) {
     let toDo = createToDo(Title, Description, DueDate);
@@ -97,6 +112,8 @@ function renderto() {
     let Title = document.getElementById("Title").value;
     let Description = document.getElementById("Description").value;
     let DueDate = document.getElementById("DueDate").value;
+
+    
     
     if ((Title == "") || (Description == "") || (DueDate == "")) {
         return;
@@ -105,7 +122,9 @@ function renderto() {
     addToDoToStorer(Title, Description, DueDate);
     document.getElementById("addToDo").reset();
     event.preventDefault();
+
     };
+    
     
     function undDisplayTheForm(event) {
     document.getElementById("addToDo").style.display = "none";
@@ -115,9 +134,12 @@ function renderto() {
     function onButton() {
     document.getElementById("addTask").style.display = "";
     }
-    
-    console.log("hi", myStorer);
 
+    localStorage.setItem('myStorer', JSON.stringify(myStorer));
+    localStorage.getItem('myStorer');
+
+    console.log("hi", myStorer);
+    renderto();
     
 } 
 
