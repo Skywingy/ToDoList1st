@@ -1,4 +1,5 @@
 import { createHtmlElement } from "./index";
+import { renderForm } from './form';
 
 function render() {
 const header = document.querySelector(".header");
@@ -10,6 +11,7 @@ const p = createHtmlElement(
 );
 header.insertBefore(p, header.firstElementChild);
 
+renderForm();
 
 
 }

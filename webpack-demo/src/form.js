@@ -71,13 +71,11 @@ function renderto() {
 })
     
     }
-
-    
     const addBookButton = document.getElementById("addTask");
     addBookButton.addEventListener("click", displayTheForm);
     addBookButton.addEventListener("click", noneButton);
     
-    //displays the form when clicked add book
+    //displays the form when clicked add task
     function displayTheForm() {
     document.getElementById("addToDo").style.display = "flex";
     };

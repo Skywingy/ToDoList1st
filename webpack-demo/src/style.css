@@ -17,7 +17,7 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 25% 75%;
     padding: 20px;
 }
 
@@ -54,7 +54,7 @@ form.show {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 180px;
+    gap: 150px;
     
 }
 
@@ -74,5 +74,14 @@ form.show {
 #top {
     display: flex;
     flex-direction: row;
-    gap: 180px;
+    gap: 150px;
+}
+
+.nav {
+    text-transform: uppercase;
+}
+
+li {
+    cursor: pointer;
+    list-style-type: none;
 }

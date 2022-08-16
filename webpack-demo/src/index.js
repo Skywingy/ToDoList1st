@@ -5,7 +5,24 @@ import { renderFooter } from './footer';
 import { renderHeader } from './header';
 import { renderForm } from './form';
 import { renderContent } from './content';
+import { renderHome } from './home';
+import { renderToday } from './today';
+import { renderProject } from './project';
+import { renderWeekend } from './weekend';
 import './style.css';
+
+
+const content = document.querySelector(".lists");
+
+
+format(new Date(2014, 1, 11), 'yyyy-MM-dd')
+
+const dates = [
+new Date(1995, 6, 2),
+new Date(1987, 1, 11),
+new Date(1989, 6, 10),
+]
+dates.sort(compareAsc)
 
 
 
@@ -20,11 +37,45 @@ if (content) element.innerText = content;
 return element;
 }
 
+function def() {
+    content.innerHTML = "";
+    renderNav();
+    renderHeader();
+    renderFooter();
+}
+function home() {
+    content.innerHTML = "";
+    renderHome();
+}
 
-renderContent();
-renderNav();
-renderFooter();
-renderHeader();
-renderForm();
+function today() {
+    content.innerHTML = "";
+    renderToday();
+}
 
-export { createHtmlElement };
+function weekend() {
+    content.innerHTML = "";
+    renderWeekend();
+}
+
+function project() {
+    content.innerHTML = "";
+    renderProject();
+}
+
+def();
+home();
+
+
+
+document.addEventListener("click", (e) => {
+    const target = e.target.innerText;
+
+    if (target === "HOME") home();
+    if (target === "TODAY")today();
+    if (target === "WEEKEND") weekend();
+    if (target === "PROJECT") project();
+});
+
+
+export { content, createHtmlElement };
