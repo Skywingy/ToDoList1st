@@ -1,27 +1,7 @@
 import { content, createHtmlElement } from "./index";
-import { renderForm } from "./form";
-
-
 
 const home = [
-{
-    name: "",
-    description:
-    "",
-    price: "",
-},
-{
-    name: "",
-    description:
-    "",
-    price: "",
-},
-{
-    name: "",
-    description:
-    "",
-    price: "",
-},
+
 ];
 
 function render() {

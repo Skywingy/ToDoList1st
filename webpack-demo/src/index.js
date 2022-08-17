@@ -35,8 +35,9 @@ function def() {
     renderNav();
     renderHeader();
     renderFooter();
-    
+
 }
+
 function home() {
     content.innerHTML = "";
     renderHome();

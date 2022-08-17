@@ -28,7 +28,7 @@ function render(){
     },
 ];
 
-addToDoToStorer();
+    renderto();
 
     //ToDo pusher
     function addToDoToStorer(Title, Description, DueDate) {
@@ -58,10 +58,9 @@ function renderto() {
     // creates remove button on the card
     const removeB = document.createElement("BUTTON");
     removeB.classList.add("removeB");
-    const textB = document.createTextNode("Remove");
+    removeB.innerHTML = '<i class="fa-solid fa-trash"></i>';
     removeB.dataset.linkedArray = index;
     
-    removeB.appendChild(textB);
     card.insertBefore(removeB, card.lastElementChild);
     removeB.addEventListener("click", removeBu);
 
@@ -139,8 +138,8 @@ function renderto() {
     localStorage.getItem('myStorer');
 
     console.log("hi", myStorer);
-    renderto();
     
+    localStorage.setItem("Title", document.getElementById("Title").value);
 } 
 
 
